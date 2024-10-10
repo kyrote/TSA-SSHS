@@ -4,7 +4,7 @@
 }
 
 :root {
-    --main-bg: #f5ecec;
+    --main-bg: #f1e1e1;
     --main-c: #1e1e1e;
 }
 
@@ -44,7 +44,7 @@ a:hover {
     width: 100% !important;
     height: 100%;
 
-    opacity: 0.4;
+    opacity: 0.5;
     background: url("../src/img/plus2.png");
     background-size: 3vw;
     background-position: 0.5vw 0.5vw;
@@ -91,7 +91,7 @@ a:hover {
 }
 
 .chapter > #name:hover {
-    font-size: 10vw;
+    font-size: 9.5vw;
 }
 
 .chapter > #description {
@@ -128,14 +128,8 @@ a:hover {
 
 #w3.window {
     position: absolute;
-    top: 18vw;
+    top: 20vw;
     left: 0vw;
-}
-
-#w4.window {
-    position: absolute;
-    top: 35vw;
-    left: 1vw;
 }
 
 .window {
