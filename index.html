@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./css/index.css" />
+        <script src="./js/jquery-3.7.1.min.js"></script>
+        <title>Siloam Springs TSA</title>
+    </head>
+    <body>
+        <div id="pattern"></div>
+        <div id="nav">
+            <div id="symbol">⚛</div>
+            <div id="about">[A]&ensp;ABOUT</div>
+            <div id="competitions">[C]&ensp;COMPETITIONS</div>
+            <div id="github">[G]&ensp;GITHUB</div>
+            <div id="contact">[O]&ensp;CONTACT</div>
+            <div id="made">MADE WITH&ensp;♥&ensp;BY JUSTIN PHU</div>
+        </div>
+        <div class="chapter">
+            <span id="welcome">Welcome to</span><br />
+            <a id="name" href="./">
+                Siloam's
+                <b style="transition: none; letter-spacing: -0.2vw">TSA</b>
+            </a>
+            <div id="description">
+                Compete, gain STEM career experience, and acquire invaluable
+                leadership lessons through the Technology Student Association!
+            </div>
+        </div>
+        <div
+            class="window"
+            id="w1"
+            style="--width: 20vw; --height: 28vw; --logo-size: 4vw"
+            onclick="window.open('https\://www.arkansastsa.org/', '_blank')"
+        >
+            <div id="title">[ ARKANSAS TSA ]</div>
+            <div id="close">X</div>
+            <div id="output">
+                <div id="overlay"></div>
+                <img class="swing" src="./src/img/logo.png" />
+            </div>
+        </div>
+        <div
+            class="window"
+            id="w2"
+            style="--width: 15vw; --height: 15vw; --logo-size: 4vw"
+            onclick="window.open('https://tsaweb.org/', '_blank')"
+        >
+            <div id="title">[ NATIONAL TSA ]</div>
+            <div id="close">X</div>
+            <div id="output">
+                <div id="overlay"></div>
+                <img class="swing2" src="./src/img/logon.png" />
+            </div>
+        </div>
+        <div class="section-line">
+            <span id="name"
+                >/ COMPETITIONS&emsp;<span style="opacity: 0.5"
+                    >(SCROLL DOWN)</span
+                ></span
+            >
+            <div></div>
+        </div>
+        <div class="marquee">
+            <ul class="marquee__content">
+                <li>
+                    SILOAM SPRINGS HIGH SCHOOL TECHNOLOGY STUDENT ASSOCIATION
+                </li>
+                <li>
+                    SILOAM SPRINGS HIGH SCHOOL TECHNOLOGY STUDENT ASSOCIATION
+                </li>
+                <li>
+                    SILOAM SPRINGS HIGH SCHOOL TECHNOLOGY STUDENT ASSOCIATION
+                </li>
+            </ul>
+
+            <!-- Mirrors the content above -->
+            <ul class="marquee__content" aria-hidden="true">
+                <li>
+                    SILOAM SPRINGS HIGH SCHOOL TECHNOLOGY STUDENT ASSOCIATION
+                </li>
+                <li>
+                    SILOAM SPRINGS HIGH SCHOOL TECHNOLOGY STUDENT ASSOCIATION
+                </li>
+                <li>
+                    SILOAM SPRINGS HIGH SCHOOL TECHNOLOGY STUDENT ASSOCIATION
+                </li>
+            </ul>
+        </div>
+        <div class="competitions">
+            <span id="name">Comps</span>
+            <span id="count">(26)</span><br />
+            <span id="filter">/ FILTER </span>
+            <div id="line"></div>
+            <div id="competition-section">
+                <span id="when">/ WHEN</span>
+                <span id="name">/ NAME</span>
+                <span id="type">/ TYPE</span>
+            </div>
+            <br />
+            <span class="filter" id="name">Name:</span>
+            <input
+                type="text"
+                placeholder="Search..."
+                onkeyup="search()"
+                id="search"
+            />
+            <div
+                class="window"
+                id="w3"
+                style="--width: 20vw; --height: 20vw; --logo-size: 4vw"
+                onclick="window.open('https://tsaweb.org/competitions/themes-and-problems', '_blank')"
+            >
+                <div id="title">[ THEMES AND PROBLEMS ]</div>
+                <div id="close">X</div>
+                <div id="output">
+                    <div id="overlay"></div>
+                    <img class="swing" src="./src/img/logont.png" />
+                </div>
+            </div>
+            <div
+                class="window"
+                id="w4"
+                style="--width: 22vw; --height: 20vw; --logo-size: 8vw"
+                onclick="window.open('https://tsaweb.org/competitions/themes-and-problems', '_blank')"
+            >
+                <div id="title">[ USEFUL INFORMATION ]</div>
+                <div id="close">X</div>
+                <div id="output">
+                    <div id="overlay"></div>
+                    <img class="swing2" src="./src/img/logow.png" />
+                </div>
+            </div>
+            <div></div>
+        </div>
+        <script src="./js/index.js"></script>
+    </body>
+</html>
