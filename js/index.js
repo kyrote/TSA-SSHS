@@ -326,7 +326,7 @@ $(".competition").click(function () {
                 pad = 5.5;
             }
         }
-        $(this).css("height", `${pad + t[5][0].length}vw`);
+        $(this).css("height", `${pad + t[5][0].length}vw`); // cheap wack fix
         $(this).attr("data-active", "1");
     } else {
         $("> .team", this).remove();
