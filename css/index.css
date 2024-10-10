@@ -4,11 +4,11 @@
 }
 
 :root {
-    --main-bg: #030303;
-    --main-c: #fafafa;
+    --main-bg: #efefef;
+    --main-c: #030303;
 }
 
-* {
+*:not(#pattern) {
     max-width: 90vw;
     transition: all 0.2s;
 }
@@ -42,16 +42,16 @@ a:hover {
     left: 4vw;
 
     display: flex;
-    gap: 0.2vw;
+    gap: 0.3vw;
 }
 
 #nav > div {
-    padding: 0.4vw;
+    padding: 0.6vw;
 
-    font-size: 0.6vw;
-    font-weight: 400;
+    font-size: 0.7vw;
+    font-weight: 300;
 
-    background: #272626;
+    background: #dfdfdf;
     cursor: pointer;
 }
 
@@ -62,7 +62,7 @@ a:hover {
 
 .chapter {
     position: relative;
-    top: 8vw;
+    top: 5vw;
     left: 4vw;
 
     font-weight: 300;
@@ -70,14 +70,15 @@ a:hover {
 
 .chapter > #name,
 .chapter > #welcome {
-    letter-spacing: -0.5vw;
+    letter-spacing: -0.7vw;
     line-height: 7.5vw;
 
     font-size: 9vw;
+    z-index: 1;
 }
 
 .chapter > #name:hover {
-    bottom: 1vw;
+    font-size: 10vw;
 }
 
 .chapter > #description {
@@ -102,14 +103,14 @@ a:hover {
 
 #w1.window {
     position: absolute;
-    top: 7vw;
-    left: 62vw;
+    top: 4vw;
+    left: 59vw;
 }
 
 #w2.window {
     position: absolute;
-    top: 18vw;
-    left: 76vw;
+    top: 16vw;
+    left: 71vw;
 }
 
 #w3.window {
@@ -122,8 +123,8 @@ a:hover {
     width: var(--width);
     height: var(--height);
 
-    background: #0e0e0e;
-    border: 0.01vw solid #fff;
+    background: #d2cece;
+    border: 0.01vw solid #000;
 
     cursor: pointer;
 }
@@ -157,13 +158,13 @@ a:hover {
 .window > #output {
     position: relative;
     top: 0vw;
-    left: 0.3vw;
+    left: 0.4vw;
 
-    height: calc(var(--height) - 1.6vw);
-    width: calc(var(--width) - 0.7vw);
-    background: #000000;
+    height: calc(var(--height) - 1.8vw);
+    width: calc(var(--width) - 1vw);
+    background: #ececec;
 
-    border: 0.01vw solid #fff;
+    border: 0.01vw solid #000;
 }
 
 .window > #output > #overlay {
@@ -171,10 +172,10 @@ a:hover {
     width: 100%;
     height: 100%;
 
-    opacity: 0.4;
-    background: url("../src/img/plus2.png");
-    background-size: 3vw;
-    background-position: 1.5vw 1.5vw;
+    opacity: 0.25;
+    background: url("../src/img/plus.svg");
+    background-size: 7vw;
+    background-position: 2vw 2vw;
 }
 
 .window > #output > *:not(#overlay) {
@@ -195,16 +196,16 @@ a:hover {
 
 @keyframes swing {
     from {
-        transform: translate(-50%, -50%) rotate(-2.5deg);
+        transform: translate(-50%, -50%) rotate(-5deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(2.5deg);
+        transform: translate(-50%, -50%) rotate(5deg);
     }
 }
 
 .section-line {
     position: relative;
-    top: 20vw;
+    top: 13vw;
 }
 
 .section-line > #name {
@@ -222,12 +223,12 @@ a:hover {
 
     width: 92vw;
     height: 0.01vw;
-    background: #fff;
+    background: #000;
 }
 
 .marquee {
     position: relative;
-    top: 20vw;
+    top: 13vw;
     left: 4vw;
     font-size: 0.8vw;
     font-weight: 200;
@@ -261,14 +262,14 @@ a:hover {
 
 .competitions {
     position: relative;
-    top: 23vw;
+    top: 16vw;
     left: 4vw;
 }
 
 .competitions > #name {
     font-size: 6vw;
     font-weight: 300;
-    letter-spacing: -0.2vw;
+    letter-spacing: -0.3vw;
 }
 
 .competitions > #count {
@@ -293,7 +294,7 @@ a:hover {
 
     width: 20vw;
     height: 0.01vw;
-    background: #fff;
+    background: #000;
 }
 
 .competitions > #competition-section {
@@ -324,7 +325,7 @@ a:hover {
 
     width: 65vw;
     height: 2vw;
-    border-top: 0.01vw solid #fff;
+    border-top: 0.01vw solid #000;
 
     font-size: 0.8vw;
 
@@ -369,20 +370,20 @@ a:hover {
     position: relative;
     top: 2vw;
     left: 1vw;
-    font-size: 1.5vw;
-    font-weight: 500;
+    font-size: 1vw;
+    font-weight: 300;
     letter-spacing: 0vw;
 }
 
 .competitions > input {
     position: relative;
     top: 2vw;
-    left: 1.25vw;
+    left: 1vw;
 
     background: none;
     border: none;
 
     font-family: inherit;
-    font-weight: 100;
-    font-size: 1.5vw;
+    font-weight: 200;
+    font-size: 1vw;
 }
