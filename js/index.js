@@ -54,11 +54,10 @@ data = [
             [
                 "Logan Bradbury",
                 "Christopher Locascio",
-                "Hayden Kriegel",
                 "Justin Phu",
                 "Jaiden Salas",
             ],
-            ["Dominic Lee", "Grant Hes", "Harley Merchant"],
+            ["Dominic Lee", "Grant Hes", "Hayden Kriegel", "Harley Merchant"],
         ],
     ],
     [
@@ -263,6 +262,8 @@ data = [
     ],
 ];
 
+console.log($(":root").css("--mobile") == 1 ? "yes" : "no");
+
 color_map = {
     AM: "#ee2624",
     PM: "#005daa",
@@ -300,37 +301,55 @@ function search() {
 }
 
 $(".competition").click(function () {
-    pad = 4.5;
+    pad = 6.5;
+    mult = $(window).height() / $(window).width() >= 1 ? 3 : 1;
     if ($(this).attr("data-active") == "0") {
         t = data[parseInt(this.id.substring(1))];
         $(this).append(
-            "<div class='team'><br />Team Size: " +
+            "<div class='team'><div id='team-info'><br />Team Size: <b>" +
                 (t[3].length == 2 ? t[3][0] + "-" + t[3][1] : t[3][0]) +
-                "<br />Teams Per Chapter: " +
+                "</b><br />Teams Per Chapter: <b>" +
                 (t[4] ? t[4] : "Unlimited") +
-                "</div>"
+                "</b></div></div>"
         );
         for (i in t[5]) {
             $(this).append(`<div class="team" id="team${i}"></div>`);
             $(`> #team${i}`, this).append(
-                "<br /><div>Team " + (parseInt(i) + 1)
+                "<br /><div><b>Team " + (parseInt(i) + 1 + "</b>")
             );
             for (p in t[5][i]) {
                 $(`> #team${i}`, this).append(t[5][i][p] + "<br /></div>");
             }
             if (parseInt(p) + 1 != (t[3].length == 2 ? t[3][1] : t[3][0])) {
                 $(`> #team${i}`, this).append(
-                    "<i style='opacity: 0.5'>(Request to join?)</i>" +
+                    "<a style='opacity: 0.6; font-size: " +
+                        0.75 * (mult != 1 ? 2 : 1) +
+                        "vw; transition: font-weight 0.25s'>(Request to join?)</a>" +
                         "<br /></div>"
                 );
-                pad = 5.5;
+                pad = 7.5;
             }
         }
-        $(this).css("height", `${pad + t[5][0].length}vw`); // cheap wack fix
+        $(this).css(
+            "height",
+            `${pad * (mult != 1 ? 3 / 1.8 : 1) + t[5][0].length * 1.2 * mult}vw`
+        ); // cheap wack fix
         $(this).attr("data-active", "1");
     } else {
         $("> .team", this).remove();
-        $(this).css("height", "2vw");
+        $(this).css(
+            "height",
+            `${$(window).height() / $(window).width() >= 1 ? 5 : 2}vw`
+        );
         $(this).attr("data-active", "0");
     }
 });
+
+window.onresize = function () {
+    $(".competition").each(function () {
+        $(this).css(
+            "height",
+            `${$(window).height() / $(window).width() >= 1 ? 5 : 2}vw`
+        );
+    });
+};

@@ -8,20 +8,59 @@
         <title>Siloam Springs TSA</title>
     </head>
     <body>
+        <div id="pattern"></div>
         <div id="nav">
             <div id="symbol">⚛</div>
-            <div id="about">[A]&ensp;ABOUT</div>
-            <div id="competitions">[C]&ensp;COMPETITIONS</div>
-            <div id="github">[G]&ensp;GITHUB</div>
-            <div id="contact">[O]&ensp;CONTACT</div>
+            <div
+                id="about"
+                onclick="window.open('https://www.arkansastsa.org/', '_blank')"
+            >
+                ABOUT
+            </div>
+            <div
+                id="themes"
+                onclick="window.open('https://tsaweb.org/competitions/themes-and-problems', '_blank')"
+            >
+                THEMES
+            </div>
+            <div
+                id="github"
+                onclick="window.open('https://github.com/kyrote', '_blank')"
+            >
+                GITHUB
+            </div>
+            <div id="contact">
+                <a href="./">CONTACT</a>
+            </div>
             <div id="made">MADE WITH&ensp;♥&ensp;BY JUSTIN PHU</div>
         </div>
         <div class="chapter">
-            <span id="welcome">Welcome to</span><br />
-            <a id="name" href="./">
-                Siloam's
-                <b style="transition: none; letter-spacing: -0.2vw">TSA</b>
-            </a>
+            <div class="non-mobile">
+                <span id="welcome">Welcome to </span><br />
+                <a id="name" href="./">
+                    Siloam's
+                    <b style="transition: none; letter-spacing: -0.2vw">TSA</b>
+                </a>
+            </div>
+            <div class="mobile">
+                <span id="welcome">Welcome</span><br />
+                <a id="name" href="./">
+                    <span style="position: relative; left: 36.5vw"
+                        >to Siloam</span
+                    ><br />
+                    <span style="transition: none; letter-spacing: -1vw"
+                        >Springs'</span
+                    ><br /><span
+                        style="
+                            position: relative;
+                            left: 30vw;
+                            top: 2vw;
+                            letter-spacing: -0.9vw;
+                        "
+                        ><b>TSA</b></span
+                    >
+                </a>
+            </div>
             <div id="description">
                 Compete, gain STEM career experience, and acquire invaluable
                 leadership lessons through the Technology Student Association.
@@ -30,7 +69,14 @@
         <div
             class="window"
             id="w1"
-            style="--width: 20vw; --height: 20vw; --logo-size: 6vw"
+            style="
+                --width: 20vw;
+                --height: 20vw;
+                --m-width: 25vw;
+                --m-height: 25vw;
+                --logo-size: 6vw;
+                --m-logo-size: 5vw;
+            "
             onclick="window.open('https\://www.arkansastsa.org/', '_blank')"
         >
             <div id="title">[ ARKANSAS TSA ]</div>
@@ -43,7 +89,7 @@
         <div
             class="window"
             id="w2"
-            style="--width: 22vw; --height: 17vw; --logo-size: 8vw"
+            style="--width: 20vw; --height: 20vw; --logo-size: 6vw"
             onclick="window.open('https://tsaweb.org/', '_blank')"
         >
             <div id="title">[ NATIONAL TSA ]</div>
@@ -87,28 +133,25 @@
                 </li>
             </ul>
         </div>
-        <div class="competitions">
-            <span id="name">Comps</span>
+        <div id="competitions">
+            <span id="name">Contests</span>
             <span id="count">(26)</span><br />
-            <span id="filter">/ FILTER </span>
-            <div id="line"></div>
-            <div id="competition-section">
-                <span id="when">/ WHEN</span>
-                <span id="name">/ NAME</span>
-                <span id="type">/ TYPE</span>
-            </div>
-            <br />
-            <span class="filter" id="name">Name:</span>
             <input
                 type="text"
                 placeholder="Search..."
                 onkeyup="search()"
                 id="search"
             />
+            <div id="competition-section">
+                <span id="when">/ WHEN</span>
+                <span id="name">/ NAME</span>
+                <span id="type">/ TYPE</span>
+            </div>
+            <br />
             <div
                 class="window"
                 id="w3"
-                style="--width: 20vw; --height: 20vw; --logo-size: 4vw"
+                style="--width: 19vw; --height: 20vw; --logo-size: 4vw"
                 onclick="window.open('https://tsaweb.org/competitions/themes-and-problems', '_blank')"
             >
                 <div id="title">[ THEMES AND PROBLEMS ]</div>

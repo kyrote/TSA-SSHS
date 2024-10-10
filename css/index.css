@@ -8,7 +8,7 @@
     --main-c: #030303;
 }
 
-*:not(#pattern) {
+*:not(#pattern, b) {
     max-width: 90vw;
     transition: all 0.2s;
 }
@@ -21,19 +21,18 @@ body {
     color: var(--main-c);
 
     min-height: 250%;
+    font-size: 1vw;
+
+    scroll-behavior: smooth;
 }
 
-a {
-    position: relative;
-    bottom: 0;
-
+a:not(.competition > .team > a) {
     text-decoration: none;
-
     color: var(--main-c);
 }
 
-a:hover {
-    color: #ee2624;
+a:not(.competition > .team > a):hover {
+    color: #fff;
 }
 
 #nav {
@@ -68,8 +67,10 @@ a:hover {
     font-weight: 300;
 }
 
-.chapter > #name,
-.chapter > #welcome {
+.chapter > * > #name,
+.chapter > * > #welcome {
+    color: var(--main-c);
+
     letter-spacing: -0.7vw;
     line-height: 7.5vw;
 
@@ -77,8 +78,9 @@ a:hover {
     z-index: 1;
 }
 
-.chapter > #name:hover {
+.chapter > * > #name:hover {
     font-size: 10vw;
+    color: #ee2624;
 }
 
 .chapter > #description {
@@ -97,7 +99,7 @@ a:hover {
     cursor: pointer;
 }
 
-.chapter > #description:hover {
+.chapter > * > #description:hover {
     opacity: 1;
 }
 
@@ -115,7 +117,7 @@ a:hover {
 
 #w3.window {
     position: absolute;
-    top: 20vw;
+    top: 11vw;
     left: 0vw;
 }
 
@@ -260,19 +262,19 @@ a:hover {
     }
 }
 
-.competitions {
+#competitions {
     position: relative;
     top: 16vw;
     left: 4vw;
 }
 
-.competitions > #name {
-    font-size: 6vw;
+#competitions > #name {
+    font-size: 5vw;
     font-weight: 300;
     letter-spacing: -0.3vw;
 }
 
-.competitions > #count {
+#competitions > #count {
     font-size: 1vw;
 
     position: relative;
@@ -280,38 +282,35 @@ a:hover {
     bottom: 4vw;
 }
 
-.competitions > #filter {
+#competitions > #search {
     position: absolute;
-    top: 8.5vw;
+    top: 7vw;
+    left: 1vw;
+    font-size: 1vw;
+    font-family: "Sohne";
 
-    font-weight: 300;
-    font-size: 0.7vw;
+    width: 15vw;
+
+    padding: 0.5vw;
+    background: #ececec;
+    border: 0.01vw solid #000;
 }
 
-.competitions > #line {
-    position: absolute;
-    top: 10vw;
-
-    width: 20vw;
-    height: 0.01vw;
-    background: #000;
-}
-
-.competitions > #competition-section {
+#competitions > #competition-section {
     position: absolute;
     top: 2vw;
     left: 25vw;
 }
 
-.competitions > #competition-section > #name {
+#competitions > #competition-section > #name {
     left: 10vw;
 }
 
-.competitions > #competition-section > #type {
+#competitions > #competition-section > #type {
     left: 40vw;
 }
 
-.competitions > #competition-section > span {
+#competitions > #competition-section > span {
     position: relative;
     bottom: 1.5vw;
 
@@ -319,7 +318,7 @@ a:hover {
     font-size: 0.7vw;
 }
 
-.competitions > #competition-section > .competition {
+#competitions > #competition-section > .competition {
     position: relative;
     bottom: 1.1vw;
 
@@ -328,6 +327,7 @@ a:hover {
     border-top: 0.01vw solid #000;
 
     font-size: 0.8vw;
+    font-weight: 200;
 
     display: flex;
     padding-top: 1vw;
@@ -338,52 +338,300 @@ a:hover {
     overflow: hidden;
 }
 
-.competitions > #competition-section > .competition:hover {
+#competitions > #competition-section > .competition:hover {
     background: var(--comp-c);
     color: #fff;
 }
 
-.competitions > #competition-section > .competition > #name {
+#competitions > #competition-section > .competition > #name {
     position: absolute;
-    top: 0.75vw;
+    top: 0.2vw;
     left: 13vw;
-    font-size: 1.2vw;
+    font-size: 2vw;
+    font-weight: 300;
+    letter-spacing: -0.1vw;
 }
 
-.competitions > #competition-section > .competition > #type {
+#competitions > #competition-section > .competition > #type {
     position: absolute;
     left: 45.5vw;
 }
 
 .competition > .team {
     position: relative;
+    top: 1vw;
     right: 2vw;
 
+    font-size: 0.9vw;
     padding: 1vw;
+    padding-right: 3vw;
 }
 
 .competition > .team > div {
     transition: none !important;
 }
 
-.competitions > #name.filter {
-    position: relative;
-    top: 2vw;
-    left: 1vw;
-    font-size: 1vw;
-    font-weight: 300;
-    letter-spacing: 0vw;
+.competition > .team > a:hover {
+    font-weight: bold;
 }
 
-.competitions > input {
-    position: relative;
-    top: 2vw;
-    left: 1vw;
+#team-info > b {
+    font-weight: 500;
+}
 
-    background: none;
-    border: none;
+.non-mobile {
+    display: block;
+}
 
-    font-family: inherit;
-    font-weight: 200;
-    font-size: 1vw;
+.mobile {
+    display: none;
+}
+
+@media (max-aspect-ratio: 15 / 16) {
+    * {
+        max-width: 100%;
+    }
+
+    html,
+    body {
+        min-height: 160%;
+    }
+
+    #pattern {
+        position: absolute;
+        left: 0;
+        top: 0;
+
+        opacity: 0.25;
+        background: url("../src/img/plus.svg");
+        background-size: 30vw;
+        background-position: 0.5vw 10vw;
+
+        width: 100%;
+        height: 90vw;
+    }
+
+    #nav {
+        left: 0vw;
+        align-items: center;
+        flex-wrap: nowrap;
+        white-space: nowrap;
+        gap: 1vw;
+    }
+
+    #nav > div {
+        padding-left: 1vw;
+        padding-right: 1vw;
+
+        font-size: 2.25vw;
+        font-weight: 200;
+
+        background: #dfdfdf;
+        cursor: pointer;
+    }
+
+    #nav > div:hover {
+        color: #fff;
+        background: #005daa;
+    }
+
+    .chapter > * > #name:hover {
+        font-size: 17vw;
+        color: inherit;
+    }
+
+    .non-mobile {
+        display: none;
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .chapter > * > #name,
+    .chapter > * > #welcome {
+        position: relative;
+        right: 4vw;
+
+        line-height: 15vw;
+        letter-spacing: -1.1vw;
+
+        font-size: 17vw;
+        white-space: nowrap;
+    }
+
+    .chapter > #description {
+        position: relative;
+        top: 12vw;
+        right: 2vw;
+
+        width: 85vw;
+        line-height: 5vw;
+        letter-spacing: -0.2vw;
+
+        font-size: 5vw;
+        font-style: normal;
+        opacity: 1;
+    }
+
+    .window {
+        width: var(--m-width);
+        height: var(--m-height);
+
+        background: #d2cece;
+        border: 0.2vw solid #000;
+
+        cursor: pointer;
+    }
+
+    .window > #title,
+    .window > #close {
+        font-weight: 100;
+        font-size: calc(var(--m-height) * 0.04);
+    }
+
+    .window > #close {
+        position: relative;
+        right: 1vw;
+    }
+
+    .window > #output {
+        position: relative;
+        top: 0.5vw;
+        left: 0.3vw;
+
+        height: calc(var(--m-height) - 2.2vw);
+        width: calc(var(--m-width) - 0.7vw);
+    }
+
+    .window > #output > #overlay {
+        background-size: 10vw;
+    }
+
+    .window > #output > *:not(#overlay) {
+        width: calc(var(--m-width) - var(--m-logo-size));
+    }
+
+    #w1.window {
+        position: absolute;
+        top: 45vw;
+        left: 70vw;
+    }
+
+    #w2,
+    #w3 {
+        display: none;
+    }
+
+    .section-line {
+        top: 20vw;
+    }
+
+    .section-line > #name {
+        font-size: 2vw;
+    }
+
+    .section-line > div {
+        height: 0.2vw;
+    }
+
+    #competitions > *:not(#competition-section, input) {
+        display: none;
+    }
+
+    .marquee {
+        white-space: nowrap;
+        font-size: 1.5vw;
+        --gap: 50vw;
+        position: relative;
+        top: 20vw;
+    }
+
+    #competitions > #search {
+        position: absolute;
+        top: 5vw;
+        font-size: 3vw;
+        width: 86vw;
+        border-radius: 0;
+    }
+
+    #competitions > #competition-section {
+        position: absolute;
+        top: 15vw;
+        left: 2vw;
+    }
+
+    #competitions > #competition-section > #when {
+        font-size: 2vw;
+    }
+
+    #competitions > #competition-section > #name {
+        left: 5vw;
+        font-size: 2vw;
+    }
+
+    #competitions > #competition-section > #type {
+        left: 55vw;
+        font-size: 2vw;
+    }
+
+    #competitions > #competition-section > .competition {
+        position: relative;
+        bottom: 1.1vw;
+
+        width: 86vw;
+        height: 5vw;
+        border-top: 0.25vw solid #000;
+
+        font-size: 2vw;
+        font-weight: 200;
+
+        display: flex;
+        padding-top: 1vw;
+
+        cursor: pointer;
+        transition: height 0.5s;
+
+        overflow: hidden;
+    }
+
+    #competitions > #competition-section > .competition:hover {
+        background: var(--comp-c);
+        color: #fff;
+    }
+
+    #competitions > #competition-section > .competition > #name {
+        font-size: 4vw;
+        letter-spacing: -0.2vw;
+    }
+
+    #competitions > #competition-section > .competition > #type {
+        left: 70.5vw;
+    }
+
+    span {
+        min-width: 10vw;
+    }
+
+    .competition > .team {
+        position: relative;
+        top: 2vw;
+        right: 6vw;
+
+        font-size: 2vw;
+        padding: 1vw;
+        padding-right: 3vw;
+    }
+
+    .competition > .team > div {
+        transition: none !important;
+    }
+
+    .competition > .team > a:hover {
+        font-weight: bold;
+    }
+
+    #team-info > b {
+        font-weight: 500;
+    }
 }
